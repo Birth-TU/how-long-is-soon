@@ -87,10 +87,6 @@
         <div id="title_n" class="smalltext">เดือน</div>
       </div>
       <div>
-        <span id="count_w" class="weeks">0</span>
-        <div id="title_w" class="smalltext">สัปดาห์</div>
-      </div>
-      <div>
         <span id="count_d" class="days">0</span>
         <div id="title_d" class="smalltext">วัน</div>
       </div>
@@ -166,7 +162,6 @@
         count: {
           y : element("count_y"),
           n : element("count_n"),
-          w : element("count_w"),
           d : element("count_d"),
           h : element("count_h"),
           m : element("count_m"),
@@ -177,7 +172,6 @@
         title: {
           y : element("title_y"),
           n : element("title_n"),
-          w : element("title_w"),
           d : element("title_d"),
           h : element("title_h"),
           m : element("title_m"),
@@ -257,7 +251,6 @@
         var Remain={
         Y: 0,
         N: 0,
-        W: 0,
         D: calcage(secs,86400,100000),
         H: calcage(secs,3600,24),
         M: calcage(secs,60,60),
@@ -280,12 +273,7 @@
           Remain.N ++;
           if (thisMonth==11) thisMonth=0;
         }
-      
-        if (Remain.D >= 7)
-        {
-          Remain.W = Math.floor(Remain.D / 7);
-          Remain.D = Remain.D % 7;
-        }
+
       
         Remain_all = '';
         for (R in Remain){ r = R.toLowerCase();
